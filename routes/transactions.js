@@ -11,6 +11,6 @@ router.post('/createTransaction', tranController.createTransaction)
 
 // router.put('/markIncomplete', todosController.markIncomplete)
 
-// router.delete('/deleteTodo', todosController.deleteTodo)
+ router.delete('/deleteTransaction', tranController.deleteTransaction)
 
 module.exports = router
