@@ -11,17 +11,27 @@
 
 <body>
     <h1>Transactions</h1>
-    <ul>
-        <% transactions.forEach( el=> { %>
-            <li class='transactionItem' data-id='<%=el._id%>'>
-                <span>
-                    <%= el.transaction %>
-                    <%= el.amount %>
-                </span>
-                <span class='del'> Delete </span>
-            </li>
-            <% }) %>
-    </ul>
+
+    <table>
+        <thead>
+          <tr>
+            <th>Transaction</th>
+            <th>Amount</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% transactions.forEach(function(el) { %>
+            <tr class='transactionItem' data-id='<%=el._id%>'>
+              <td><%= el.transaction %></td>
+              <td><%= el.amount %></td>
+              <td class='del'> Delete </td>
+
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      
     
       
 
