@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Transactions</h1>
+    <ul>
+    <% transactions.forEach( el => { %>
+            <li class='transactionItem' data-id='<%=el._id%>'>
+               
+            </li>
+    <% }) %>    
+    </ul>
+
+    
+
+    <form action="/transactions/createTransaction" method='POST'>
+        <input type="text" placeholder="Enter Transaction Item" name='transactionItem'>
+        <input type="submit">
+    </form>
+
+    <a href="/logout">Logout</a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
