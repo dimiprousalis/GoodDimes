@@ -21,7 +21,7 @@ async function deleteTransaction(){
             method: 'delete',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                'transactionIdFromJSFile': transactionId
             })
         })
         const data = await response.json()
