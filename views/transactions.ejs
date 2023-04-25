@@ -16,16 +16,20 @@
             <li class='transactionItem' data-id='<%=el._id%>'>
                 <span>
                     <%= el.transaction %>
+                    <%= el.amount %>
                 </span>
                 <span class='del'> Delete </span>
             </li>
             <% }) %>
     </ul>
+    
+      
 
 
 
     <form action="/transactions/createTransaction" method='POST'>
         <input type="text" placeholder="Enter Transaction Item" name='transactionItem'>
+        <input type="number" step="any" placeholder="Enter Amount" name='amountItem'>
         <input type="submit">
     </form>
 

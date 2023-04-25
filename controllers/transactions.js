@@ -13,7 +13,7 @@ module.exports = {
     },
     createTransaction: async (req, res)=>{
         try{
-            await Transaction.create({transaction: req.body.transactionItem, userId: req.user.id})
+            await Transaction.create({transaction: req.body.transactionItem, amount: req.body.amountItem, userId: req.user.id})
             console.log('Transaction has been added!')
             res.redirect('/transactions')
         }catch(err){
@@ -23,7 +23,7 @@ module.exports = {
     deleteTransaction: async (req, res)=>{
         console.log(req.body.transactionIdFromJSFile)
         try{
-            await Transaction.findOneAndDelete({_id:req.body.todoIdFromJSFile})
+            await Transaction.findOneAndDelete({_id:req.body.transactionIdFromJSFile})
             console.log('Deleted Transaction')
             res.json('Deleted It')
         }catch(err){
