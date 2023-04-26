@@ -1,35 +1,21 @@
 /* Box Model Hack */
 * {
     box-sizing: border-box;
-}
-
-/* Clear fix hack */
-.clearfix:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0;
-}
-
-.clear {
-    clear: both;
-}
-
-html {
+  }
+html,body {
     height: 100%;
 }
 
 body {
-    background-image: url("images/abstract.jpg");
-    background-color: hsl(0, 0%, 80%);
+    background-image: url("images/abstract2.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
 }
 
+h1 {
+    font-size: medium;
+}
 .del {
     font-size: small;
     color: red;
@@ -37,10 +23,36 @@ body {
 }
 
 .container {
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     margin-top: 2%;
-    background: transparent;
-    width: 600px;
+    background: white;
     padding: 2rem;
+    width: 300px;
+    align-items: center; 
+    border-radius: 1rem;
+}
+
+.tranBox {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.36);
+}
+
+.formBox {
+    background: white;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+   
+} 
+
+.tableBox {
+    background: white;
+}
+
+img {
+    height: 40%;
 }
 
