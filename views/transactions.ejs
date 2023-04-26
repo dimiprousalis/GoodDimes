@@ -18,36 +18,53 @@
     <form action="/transactions/createTransaction" method='POST'>
       <input type="text" placeholder="Enter Transaction Item" name='transactionItem'>
       <input type="number" step="any" placeholder="Enter Amount" name='amountItem'>
+      <label for="payerItem">Who Paid?</label>
+      <select name='payerItem'>
+        <option value="user">Me</option>
+        <option value="friend">My Friend</option>
+      </select>
       <input type="submit">
     </form>
-  
 
 
-  <table class="table table-hover table-dark">
-    <thead>
-      <tr>
-        <th>Description</th>
-        <th>Amount</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% transactions.forEach(function(el) { %>
-        <tr class='transactionItem' data-id='<%=el._id%>'>
-          <td>
-            <%= el.transaction %>
-          </td>
-          <td>
-            <%= el.amount %>
-          </td>
-          <td class='del'> Delete </td>
 
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th>Description</th> 
+          <th>Amount</th>
+          <th>Your Portion</th>
+          <th>Your Friend's Portion</th>
+          <th>Who Paid?</th>
+          <th>Delete</th>
         </tr>
-        <% }) %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% transactions.forEach(function(el) { %>
+          <tr class='transactionItem' data-id='<%=el._id%>'>
+            <td>
+              <%= el.transaction %>
+            </td>
+            <td>
+              <%= el.amount %>
+            </td>
+            <td>
+              <%= el.amount/2 %>
+            </td>
+            <td>
+              <%= el.amount/2 %>
+            </td>
+            <td>
+              <%= el.payer === "user" ? "You" : "Your Friend" %>
+            </td>
+            <td class='del'> Delete </td>
 
-</div>
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
+
+  </div>
 
 
   <a href="/logout">Logout</a>
