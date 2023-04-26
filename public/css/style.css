@@ -1,7 +1,44 @@
-h1{
-    color: red;
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
 }
-.del{
+
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url("images/abstract.jpg");
+    background-color: hsl(0, 0%, 80%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+}
+
+.del {
     font-size: small;
     color: red;
+}
+
+.container {
+    justify-content: center;
+    margin-top: 2%;
+    background: transparent;
+    width: 600px;
+    padding: 2rem;
 }
