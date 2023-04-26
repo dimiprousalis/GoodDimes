@@ -13,7 +13,7 @@ module.exports = {
     },
     createTransaction: async (req, res)=>{
         try{
-            await Transaction.create({transaction: req.body.transactionItem, amount: req.body.amountItem, payer: req.body.payerItem, userId: req.user.id})
+            await Transaction.create({transaction: req.body.transactionItem, amount: req.body.amountItem, payer: req.body.payerItem, userPortion: req.body.amountItem/2, friendPortion: req.body.amountItem/2, userId: req.user.id})
             console.log('Transaction has been added!')
             res.redirect('/transactions')
         }catch(err){

@@ -16,13 +16,25 @@
 
   <div class="container">
     <form action="/transactions/createTransaction" method='POST'>
-      <input type="text" placeholder="Enter Transaction Item" name='transactionItem'>
-      <input type="number" step="any" placeholder="Enter Amount" name='amountItem'>
-      <label for="payerItem">Who Paid?</label>
-      <select name='payerItem'>
-        <option value="user">Me</option>
-        <option value="friend">My Friend</option>
-      </select>
+      <div class="form-group">
+        <label for="transactionItem">Transaction Item</label>
+        <input type="text" placeholder="Enter Description" name='transactionItem'>
+      </div>
+      <div class="form-group">
+        <label for="amountItem">Amount</label>
+        <input type="number" step="any" placeholder="Enter Amount" name='amountItem'>
+      </div>
+      <label>Split Transaction:</label>
+      <input type="radio" name="splitItem" value="equally" id="equallyItem">
+      <label for="equallyItem">Equally</label>
+      <div class="form-group">
+        <label for="payerItem">Who Paid?</label>
+        <select name='payerItem'>
+          <option value="user">Me</option>
+          <option value="friend">My Friend</option>
+        </select>
+      </div>
+
       <input type="submit">
     </form>
 
@@ -31,7 +43,7 @@
     <table class="table table-hover table-dark">
       <thead>
         <tr>
-          <th>Description</th> 
+          <th>Description</th>
           <th>Amount</th>
           <th>Your Portion</th>
           <th>Your Friend's Portion</th>
@@ -49,13 +61,13 @@
               <%= el.amount %>
             </td>
             <td>
-              <%= el.amount/2 %>
+              <%= el.userPortion %>
             </td>
             <td>
-              <%= el.amount/2 %>
+              <%= el.friendPortion %>
             </td>
             <td>
-              <%= el.payer === "user" ? "You" : "Your Friend" %>
+              <%= el.payer==="user" ? "You" : "Your Friend" %>
             </td>
             <td class='del'> Delete </td>
 

@@ -6,6 +6,7 @@ Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteTransaction)
 })
 
+
 // Array.from(todoItem).forEach((el)=>{
 //     el.addEventListener('click', markComplete)
 // })
@@ -13,6 +14,7 @@ Array.from(deleteBtn).forEach((el)=>{
 Array.from(todoComplete).forEach((el)=>{
     el.addEventListener('click', markIncomplete)
 })
+
 
 async function deleteTransaction(){
     const transactionId = this.parentNode.dataset.id
