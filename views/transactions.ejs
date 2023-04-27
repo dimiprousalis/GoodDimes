@@ -31,7 +31,7 @@
         <input type="text" placeholder="Enter Description" name='transactionItem'>
       </div>
       <div class="form-group">
-        <label for="amountItem">Amount</label>
+        <label for="amountItem">Transaction Total</label>
         <input type="number" step="any" placeholder="Enter Amount" name='amountItem'>
       </div>
       <!-- radio buttons to select whether pmt split equally -->
@@ -39,7 +39,7 @@
         <label>Split Transaction</label>
         <input type="radio" name="splitItem" value="equally" id="equallyItem">
         <label id="radioLabel" for="equallyItem">Equally</label>
-        <input type="radio" name="splitItem" id="otherAmountItem">
+        <input type="radio" name="splitItem" value="other" id="otherAmountItem">
         <label id="radioLabel" for="otherAmountItem">Other</label>
       </div>
       <!---->
@@ -49,6 +49,7 @@
         <input type="number" step="any" placeholder="Enter Your Dollar Amount" name='userAmountItem'>
       </div>
       <!---->
+      
       <div class="form-group">
         <label for="payerItem">Who Paid?</label>
         <select name='payerItem'>

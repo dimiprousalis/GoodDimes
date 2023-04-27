@@ -13,7 +13,11 @@ module.exports = {
     },
     createTransaction: async (req, res)=>{
         try{
-            await Transaction.create({transaction: req.body.transactionItem, amount: req.body.amountItem, payer: req.body.payerItem, userPortion: req.body.amountItem/2, friendPortion: req.body.amountItem/2, userId: req.user.id})
+            // Calculates transaction split amount
+            const userAmt = req.body.splitItem === "equally"? req.body.amountItem/2 : req.body.userAmountItem;
+            const friendAmt = req.body.splitItem === "equally"? req.body.amountItem/2 : req.body.amountItem - req.body.userAmountItem;
+            // Creates a new transaction record in the database
+            await Transaction.create({transaction: req.body.transactionItem, amount: req.body.amountItem, payer: req.body.payerItem, userPortion: userAmt, friendPortion: friendAmt, userId: req.user.id})
             console.log('Transaction has been added!')
             res.redirect('/transactions')
         }catch(err){
