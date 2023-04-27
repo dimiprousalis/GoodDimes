@@ -46,7 +46,9 @@ h1 {
     color: black;
 }
 
-
+#home .btn {
+    margin: .5rem;
+}
 
 .formBox {
     background: white;
