@@ -22,6 +22,17 @@ h1 {
     cursor: pointer;
 }
 
+/* .container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    background: white;
+    padding: 2rem;
+    width: 300px;
+    align-items: center; 
+    border-radius: 1rem;
+} */
+
 .container {
     display: flex;
     flex-direction: column;
@@ -54,5 +65,9 @@ h1 {
 
 img {
     height: 40%;
+    background: rgba(0, 128, 0, 0.305);
 }
 
+h1 {
+    text-shadow: 2px 2px 5px red;
+  }
