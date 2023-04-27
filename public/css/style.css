@@ -1,8 +1,9 @@
-/* Box Model Hack */
 * {
-    box-sizing: border-box;
-  }
-html,body {
+    font-family: 'Secular One', Courier, monospace;
+}
+
+html,
+body {
     height: 100%;
 }
 
@@ -16,58 +17,81 @@ body {
 h1 {
     font-size: medium;
 }
+
 .del {
     font-size: small;
     color: red;
     cursor: pointer;
 }
 
-/* .container {
+
+.simpleBox {
     display: flex;
     flex-direction: column;
     margin-top: 2%;
     background: white;
     padding: 2rem;
     width: 300px;
-    align-items: center; 
-    border-radius: 1rem;
-} */
-
-.container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2%;
-    background: white;
-    padding: 2rem;
-    width: 300px;
-    align-items: center; 
+    align-items: center;
     border-radius: 1rem;
 }
 
-.tranBox {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.36);
+.btn {
+    background-color: #d59dcc;
+    border-color: #d59dcc;
+    color: black;
 }
+
+
 
 .formBox {
     background: white;
     padding: 1rem;
-    margin: 1rem;
+    margin: 1rem auto;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
-   
-} 
+    width: 400px;
+    /* height: 400px; */
+}
 
 .tableBox {
     background: white;
+    box-shadow: 12px 12px 2px 1px black;
 }
 
 img {
-    height: 40%;
-    background: rgba(0, 128, 0, 0.305);
+   width: 500px
 }
 
-h1 {
-    text-shadow: 2px 2px 5px red;
+
+label {
+    width: 10em;
+    text-align: right;
+    font-weight: bold;
+}
+
+#radioLabel {
+    text-align: left;
+    font-weight: 300;
+}
+
+#home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    
+  }
+
+  #home div ~ div {
+    text-align: center;
+  }
+
+  .welcomeTxt {
+    font-size: 400%;
+    font-weight: bold;
+    padding: .5em;
+    
   }
