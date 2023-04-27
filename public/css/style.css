@@ -15,7 +15,6 @@ body {
 body {
     background-image: url("images/abstract2.jpg");
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -56,14 +55,19 @@ h1 {
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 400px;
     /* height: 400px; */
 }
 
-.tableBox {
+#tableBox {
     background: white;
     box-shadow: 12px 12px 2px 1px black;
+    width: 70%;
+    max-width: 70%;
+    margin: auto;
+    
 }
+
 
 img {
    width: 100%;
@@ -89,6 +93,7 @@ label {
     justify-content: center;
     align-items: center;
     height: 80%;
+    margin-top: 10%;
     
   }
 
@@ -101,4 +106,14 @@ label {
     font-weight: bold;
     padding: .5em;
     
+  }
+
+
+  @media (max-width: 500px) {
+    .formBox {
+        width: 100%;
+    }
+    .formInput {
+        width: 150px;
+    }
   }

@@ -1,6 +1,8 @@
 <%- include('partials/header') -%>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <a class="navbar-brand" href="#">Good Dimes</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,17 +24,17 @@
   </nav>
 
 
-  <div class="container">
 
+  <div class="container">
 
     <form class="formBox" action="/transactions/createTransaction" method='POST'>
       <div class="form-group">
         <label for="transactionItem">Transaction Item</label>
-        <input type="text" placeholder="Enter Description" name='transactionItem'>
+        <input class="formInput" type="text" placeholder="Enter Description" name='transactionItem'>
       </div>
       <div class="form-group">
         <label for="amountItem">Transaction Total</label>
-        <input type="number" step="any" placeholder="Enter Amount" name='amountItem'>
+        <input class="formInput" type="number" step="any" placeholder="Enter Amount" name='amountItem'>
       </div>
       <!-- radio buttons to select whether pmt split equally -->
       <div class="form-group custom-control custom-radio custom-control-inline">
@@ -49,7 +51,7 @@
         <input type="number" step="any" placeholder="Enter Your Dollar Amount" name='userAmountItem'>
       </div>
       <!---->
-      
+
       <div class="form-group">
         <label for="payerItem">Who Paid?</label>
         <select name='payerItem'>
@@ -64,45 +66,43 @@
 
 
 
-
-
-    <table class="table table-striped tableBox">
-      <thead>
-        <tr>
-          <th>Description</th>
-          <th>Amount</th>
-          <th>Your Portion</th>
-          <th>Your Friend's Portion</th>
-          <th>Who Paid?</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% transactions.forEach(function(el) { %>
-          <tr class='transactionItem' data-id='<%=el._id%>'>
-            <td>
-              <%= el.transaction %>
-            </td>
-            <td>
-              <%= el.amount %>
-            </td>
-            <td>
-              <%= el.userPortion %>
-            </td>
-            <td>
-              <%= el.friendPortion %>
-            </td>
-            <td>
-              <%= el.payer==="user" ? "You" : "Your Friend" %>
-            </td>
-            <td class='del'> Delete </td>
-
+    <div class="table-responsive">
+      <table class="table table-striped" id="tableBox">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Your Portion</th>
+            <th>Your Friend's Portion</th>
+            <th>Who Paid?</th>
+            <th>Delete</th>
           </tr>
-          <% }) %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% transactions.forEach(function(el) { %>
+            <tr class='transactionItem' data-id='<%=el._id%>'>
+              <td>
+                <%= el.transaction %>
+              </td>
+              <td>
+                <%= el.amount %>
+              </td>
+              <td>
+                <%= el.userPortion %>
+              </td>
+              <td>
+                <%= el.friendPortion %>
+              </td>
+              <td>
+                <%= el.payer==="user" ? "You" : "Your Friend" %>
+              </td>
+              <td class='del'> Delete </td>
 
-
+            </tr>
+            <% }) %>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   </div>
