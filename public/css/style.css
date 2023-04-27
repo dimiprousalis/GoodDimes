@@ -2,6 +2,11 @@
     font-family: 'Secular One', Courier, monospace;
 } */
 
+.hidden {
+    display: none;
+}
+
+
 html,
 body {
     height: 100%;
@@ -51,7 +56,7 @@ h1 {
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 500px;
     /* height: 400px; */
 }
 
@@ -69,10 +74,12 @@ label {
     width: 10em;
     text-align: right;
     font-weight: bold;
+    margin-right: .1rem;
 }
 
 #radioLabel {
     text-align: left;
+    margin-left: .2rem;
     font-weight: 300;
 }
 

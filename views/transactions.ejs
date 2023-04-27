@@ -1,97 +1,108 @@
 <%- include('partials/header') -%>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Good Dimes</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/transactions">Transactions</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/logout">Sign Out</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-
-    <div class="container">
-
-     
-        <form class="formBox" action="/transactions/createTransaction" method='POST'>
-          <div class="form-group">
-            <label for="transactionItem">Transaction Item</label>
-            <input type="text" placeholder="Enter Description" name='transactionItem'>
-          </div>
-          <div class="form-group">
-            <label for="amountItem">Amount</label>
-            <input type="number" step="any" placeholder="Enter Amount" name='amountItem'>
-          </div>
-          <div class="form-group">
-            <label>Split Transaction:</label>
-            <input type="radio" name="splitItem" value="equally" id="equallyItem">
-            <label id="radioLabel" for="equallyItem">Equally</label>
-          </div>
-          <div class="form-group">
-            <label for="payerItem">Who Paid?</label>
-            <select name='payerItem'>
-              <option value="user">Me</option>
-              <option value="friend">My Friend</option>
-            </select>
-          </div>
-          <input class="btn" type="submit">
-        </form>
-  
-       
-      
-
-
-
-      
-        <table class="table table-striped tableBox">
-          <thead>
-            <tr>
-              <th>Description</th>
-              <th>Amount</th>
-              <th>Your Portion</th>
-              <th>Your Friend's Portion</th>
-              <th>Who Paid?</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% transactions.forEach(function(el) { %>
-              <tr class='transactionItem' data-id='<%=el._id%>'>
-                <td>
-                  <%= el.transaction %>
-                </td>
-                <td>
-                  <%= el.amount %>
-                </td>
-                <td>
-                  <%= el.userPortion %>
-                </td>
-                <td>
-                  <%= el.friendPortion %>
-                </td>
-                <td>
-                  <%= el.payer==="user" ? "You" : "Your Friend" %>
-                </td>
-                <td class='del'> Delete </td>
-
-              </tr>
-              <% }) %>
-          </tbody>
-        </table>
-      
-
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Good Dimes</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/transactions">Transactions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Sign Out</a>
+        </li>
+      </ul>
     </div>
+  </nav>
+
+
+  <div class="container">
+
+
+    <form class="formBox" action="/transactions/createTransaction" method='POST'>
+      <div class="form-group">
+        <label for="transactionItem">Transaction Item</label>
+        <input type="text" placeholder="Enter Description" name='transactionItem'>
+      </div>
+      <div class="form-group">
+        <label for="amountItem">Amount</label>
+        <input type="number" step="any" placeholder="Enter Amount" name='amountItem'>
+      </div>
+      <!-- radio buttons to select whether pmt split equally -->
+      <div class="form-group custom-control custom-radio custom-control-inline">
+        <label>Split Transaction</label>
+        <input type="radio" name="splitItem" value="equally" id="equallyItem">
+        <label id="radioLabel" for="equallyItem">Equally</label>
+        <input type="radio" name="splitItem" id="otherAmountItem">
+        <label id="radioLabel" for="otherAmountItem">Other</label>
+      </div>
+      <!---->
+      <!-- input form to enter custom amount if split not equally -->
+      <div id="extra-input-form" class="hidden form-group">
+        <label for="userAmountItem">Your Portion</label>
+        <input type="number" step="any" placeholder="Enter Your Dollar Amount" name='userAmountItem'>
+      </div>
+      <!---->
+      <div class="form-group">
+        <label for="payerItem">Who Paid?</label>
+        <select name='payerItem'>
+          <option value="user">Me</option>
+          <option value="friend">My Friend</option>
+        </select>
+      </div>
+      <input class="btn" type="submit">
+    </form>
+
+
+
+
+
+
+
+    <table class="table table-striped tableBox">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Your Portion</th>
+          <th>Your Friend's Portion</th>
+          <th>Who Paid?</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% transactions.forEach(function(el) { %>
+          <tr class='transactionItem' data-id='<%=el._id%>'>
+            <td>
+              <%= el.transaction %>
+            </td>
+            <td>
+              <%= el.amount %>
+            </td>
+            <td>
+              <%= el.userPortion %>
+            </td>
+            <td>
+              <%= el.friendPortion %>
+            </td>
+            <td>
+              <%= el.payer==="user" ? "You" : "Your Friend" %>
+            </td>
+            <td class='del'> Delete </td>
+
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
+
+
+  </div>
 
   </div>
 
