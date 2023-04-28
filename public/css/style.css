@@ -59,6 +59,16 @@ h1 {
     flex-direction: column;
     width: 400px;
     /* height: 400px; */
+    
+    /*popup */ 
+        /* position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3); */
 }
 
 #tableBox {
@@ -110,7 +120,27 @@ label {
     
   }
 
+.summary {
+    background: rgb(54, 54, 54);
+    width: 80%;
+    text-align: center;
+    border-radius: 1rem;
+    margin: 0 auto;
+    color: white;
+}
 
+.summary p {
+    padding: .5rem;
+}
+
+.customNav {
+    background: rgb(54, 54, 54);
+    color: white;
+}
+
+.nav-link {
+    color: white !important;
+}
   @media (max-width: 500px) {
     .formBox {
         width: 100%;

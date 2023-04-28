@@ -2,8 +2,8 @@
 
 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-    <a class="navbar-brand" href="#">Good Dimes</a>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top customNav">
+    <a class="navbar-brand">Good Dimes</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -26,6 +26,10 @@
 
 
   <div class="container">
+
+    <!-- Adding button to make transaction entry a popout window -->
+    <!-- <button id="add-transaction-button">Add Transaction</button>
+    <div id="add-transaction-form" class="hidden"> -->
 
     <form class="formBox" action="/transactions/createTransaction" method='POST'>
       <div class="form-group">
@@ -62,6 +66,15 @@
       <input class="btn" type="submit">
     </form>
 
+    <!-- amountSum: totalAmount, 
+    userAmountSum: totalUserAmount,
+    friendAmountSum: totalFriendAmount,
+    userSpentSum: totalUserSpent,
+    friendSpentSum: totalFriendSpent}) -->
+    <div class="summary">
+      <p>You and your friend have spent a total of $<%= amountSum %>. Your potion total is $<%= userAmountSum %> while
+            your friend's portion is $<%= friendAmountSum %>. You spent $<%= userSpentSum %> which means your friend owes you $<%= userSpentSum - userAmountSum %>!</p>
+    </div>
 
 
 
@@ -103,9 +116,12 @@
         </tbody>
       </table>
     </div>
-  </div>
+
+
+
+
+
 
   </div>
-
 
   <%- include('partials/footer') -%>

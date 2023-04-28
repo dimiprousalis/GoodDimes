@@ -4,9 +4,22 @@ module.exports = {
     getTransactions: async (req,res)=>{
         console.log(req.user)
         try{
-            const transactionItems = await Transaction.find({userId:req.user.id})
-            //const itemsLeft = await Transaction.countDocuments({userId:req.user.id,completed: false})
-            res.render('transactions.ejs', {transactions: transactionItems, user: req.user})
+            const transactionItems = await Transaction.find({userId:req.user.id});
+            //Calculate the dollar splits between how much user/friend consumed and how much they spent
+            const totalAmount = transactionItems.reduce((a, obj) => a + obj.amount, 0);
+            const totalUserAmount = transactionItems.reduce((a, obj) => a + obj.userPortion, 0);
+            const totalFriendAmount = transactionItems.reduce((a, obj) => a + obj.friendPortion, 0);
+            const totalUserSpent = transactionItems.filter(obj => obj.payer === "user").reduce((a, obj) => a + obj.amount, 0);
+            const totalFriendSpent = totalAmount - totalUserSpent;
+
+            res.render('transactions.ejs', {
+                transactions: transactionItems, 
+                user: req.user, 
+                amountSum: totalAmount, 
+                userAmountSum: totalUserAmount,
+                friendAmountSum: totalFriendAmount,
+                userSpentSum: totalUserSpent,
+                friendSpentSum: totalFriendSpent})
         }catch(err){
             console.log(err)
         }

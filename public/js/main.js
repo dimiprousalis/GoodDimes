@@ -4,6 +4,20 @@ const equallyBtn = document.querySelector('#equallyItem') //<= radio buttons for
 const todoItem = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
 
+// // Add buttons to make transaction entry form a pop out window
+// const addButton = document.getElementById("add-transaction-button");
+// const addForm = document.getElementById("add-transaction-form");
+
+// // Show the form when the button is clicked
+// addButton.addEventListener("click", function () {
+//     addForm.classList.remove("hidden");
+// });
+
+// // Hide the form when the submit button is clicked
+// addForm.addEventListener("submit", function () {
+//     addForm.classList.add("hidden");
+// });
+
 
 //Adding event listeners to transaction item deletes
 Array.from(deleteBtn).forEach((el) => {
