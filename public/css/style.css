@@ -38,12 +38,14 @@ h1 {
     width: 300px;
     align-items: center;
     border-radius: 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .btn {
     background-color: #d59dcc;
     border-color: #d59dcc;
     color: black;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 #home .btn {
@@ -58,10 +60,11 @@ h1 {
     display: flex;
     flex-direction: column;
     width: 400px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     /* height: 400px; */
-    
-    /*popup */ 
-        /* position: fixed;
+
+    /*popup */
+    /* position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -73,16 +76,17 @@ h1 {
 
 #tableBox {
     background: white;
-    box-shadow: 12px 12px 2px 1px black;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     width: 70%;
     max-width: 70%;
     margin: auto;
-    
+    text-align: center;
 }
 
 
+
 img {
-   width: 100%;
+    width: 100%;
 }
 
 
@@ -106,23 +110,23 @@ label {
     align-items: center;
     height: 80%;
     margin-top: 10%;
-    
-  }
 
-  #home div ~ div {
+}
+
+#home div~div {
     text-align: center;
-  }
+}
 
-  .welcomeTxt {
+.welcomeTxt {
     font-size: 400%;
     font-weight: bold;
     padding: .5em;
-    
-  }
+
+}
 
 .summary {
     background: rgb(54, 54, 54);
-    width: 80%;
+    width: 320px;
     text-align: center;
     border-radius: 1rem;
     margin: 0 auto;
@@ -141,11 +145,28 @@ label {
 .nav-link {
     color: white !important;
 }
-  @media (max-width: 500px) {
+
+
+.totalRow {
+    font-weight: bold;
+}
+
+.radioLine > *{
+    width: 150px;
+    margin-bottom: 0;
+    padding-left: 0;
+    align-items: center;
+    
+}
+
+@media (max-width: 500px) {
     .formBox {
         width: 100%;
     }
+
     .formInput {
         width: 150px;
     }
-  }
+}
+
+

@@ -41,18 +41,21 @@
         <input class="formInput" type="number" step="any" placeholder="Enter Amount" name='amountItem'>
       </div>
       <!-- radio buttons to select whether pmt split equally -->
-      <div class="form-group custom-control custom-radio custom-control-inline">
+      <div class="radioLine form-group">
         <label>Split Transaction</label>
-        <input type="radio" name="splitItem" value="equally" id="equallyItem">
-        <label id="radioLabel" for="equallyItem">Equally</label>
-        <input type="radio" name="splitItem" value="other" id="otherAmountItem">
-        <label id="radioLabel" for="otherAmountItem">Other</label>
+
+        <div class="radioLine form-group custom-control custom-radio custom-control-inline">
+          <input type="radio" name="splitItem" value="equally" id="equallyItem">
+          <label id="radioLabel" for="equallyItem">Equally</label>
+          <input type="radio" name="splitItem" value="other" id="otherAmountItem">
+          <label id="radioLabel" for="otherAmountItem">Other</label>
+        </div>
       </div>
       <!---->
       <!-- input form to enter custom amount if split not equally -->
       <div id="extra-input-form" class="hidden form-group">
         <label for="userAmountItem">Your Portion</label>
-        <input type="number" step="any" placeholder="Enter Your Dollar Amount" name='userAmountItem'>
+        <input class="formInput" type="number" step="any" placeholder="Enter Your Dollar Amount" name='userAmountItem'>
       </div>
       <!---->
 
@@ -73,7 +76,8 @@
     friendSpentSum: totalFriendSpent}) -->
     <div class="summary">
       <p>You and your friend have spent a total of $<%= amountSum %>. Your potion total is $<%= userAmountSum %> while
-            your friend's portion is $<%= friendAmountSum %>. You spent $<%= userSpentSum %> which means your friend owes you $<%= userSpentSum - userAmountSum %>!</p>
+            your friend's portion is $<%= friendAmountSum %>. You spent $<%= userSpentSum %> which means your friend
+                owes you $<%= userSpentSum - userAmountSum %>!</p>
     </div>
 
 
@@ -86,7 +90,7 @@
             <th>Description</th>
             <th>Amount</th>
             <th>Your Portion</th>
-            <th>Your Friend's Portion</th>
+            <th>Friend's Portion</th>
             <th>Who Paid?</th>
             <th>Delete</th>
           </tr>
@@ -98,21 +102,32 @@
                 <%= el.transaction %>
               </td>
               <td>
-                <%= el.amount %>
+                $<%= el.amount.toFixed(2) %>
               </td>
               <td>
-                <%= el.userPortion %>
+                $<%= el.userPortion.toFixed(2) %>
               </td>
               <td>
-                <%= el.friendPortion %>
+                $<%= el.friendPortion.toFixed(2) %>
               </td>
               <td>
-                <%= el.payer==="user" ? "You" : "Your Friend" %>
+                <%= el.payer==="user" ? "Me" : "My Friend" %>
               </td>
-              <td class='del'> Delete </td>
+              <td class='del'><i class="fa-sharp fa-solid fa-trash"></i> </td>
 
             </tr>
             <% }) %>
+              <tr class="totalRow">
+                <td>Total</td>
+                <td>$<%= amountSum.toFixed(2) %>
+                </td>
+                <td>$<%= userAmountSum.toFixed(2) %>
+                </td>
+                <td>$<%= friendAmountSum.toFixed(2) %>
+                </td>
+                <td></td>
+                <td></td>
+              </tr>
         </tbody>
       </table>
     </div>
