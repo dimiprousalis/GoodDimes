@@ -4,7 +4,8 @@ GoodDimes is a web application that helps you split expenses with your friends. 
 **Live Website: https://good-dimes.onrender.com/**
 
 ## Built With
-- Javascript, EJS, HTML5/CSS3, Bootstrap
+- Javascript
+- EJS, HTML5/CSS3, Bootstrap
 - MongoDB, Mongoose.js
 - Node.js, Express.js
 - VSCode
@@ -16,7 +17,7 @@ To install and run the GoodDimes web application, follow these steps:
     `git clone https://github.com/dimiprousalis/GoodDimes.git`
   2. Install the required dependencies using npm: `npm install`
   3. Start the web application: `npm start`
-  4. The application will be accessible at http://localhost:3000 in your web browser.
+  4. The application will be running on localhost:3000 in your web browser.
 
 ## Usage
 To use GoodDimes, simply sign up for an account and start adding transactions. Each transaction should include the date, amount, payer, and recipients. You can then see a summary of your balance between you are your friend.
