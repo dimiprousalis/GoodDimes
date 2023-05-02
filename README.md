@@ -4,7 +4,7 @@ GoodDimes is a web application that helps you split expenses with your friends. 
 **Live Website: https://good-dimes.onrender.com/**
 
 ## Built With
-- HTML5/CSS3, Javascript, EJS
+- Javascript, EJS, HTML5/CSS3, Bootstrap
 - MongoDB, Mongoose.js
 - Node.js, Express.js
 - VSCode
