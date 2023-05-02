@@ -13,7 +13,7 @@ GoodDimes is a web application that helps you split expenses with your friends. 
 ## Installation
 To install and run the GoodDimes web application, follow these steps:
   1. Clone the repository to your local machine:
-      git clone https://github.com/dimiprousalis/GoodDimes.git
+    `git clone https://github.com/dimiprousalis/GoodDimes.git`
   2. Install the required dependencies using npm: `npm install`
   3. Start the web application: `npm start`
   4. The application will be accessible at http://localhost:3000 in your web browser.
