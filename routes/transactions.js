@@ -7,10 +7,6 @@ router.get('/', ensureAuth, tranController.getTransactions)
 
 router.post('/createTransaction', tranController.createTransaction)
 
-// router.put('/markComplete', todosController.markComplete)
-
-// router.put('/markIncomplete', todosController.markIncomplete)
-
  router.delete('/deleteTransaction', tranController.deleteTransaction)
 
 module.exports = router
