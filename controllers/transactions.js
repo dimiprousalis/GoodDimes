@@ -2,7 +2,6 @@ const Transaction = require('../models/Transaction')
 
 module.exports = {
     getTransactions: async (req,res)=>{
-        console.log(req.user)
         try{
             const transactionItems = await Transaction.find({userId:req.user.id});
             //Calculate the dollar splits between how much user/friend consumed and how much they spent
@@ -26,7 +25,6 @@ module.exports = {
     },
     createTransaction: async (req, res)=>{
         try{
-            console.log(req.body)
             // Calculates transaction split amount
             const userAmt = req.body.splitItem === "equally"? req.body.amountItem/2 : req.body.userAmountItem;
             const friendAmt = req.body.splitItem === "equally"? req.body.amountItem/2 : req.body.amountItem - req.body.userAmountItem;
@@ -39,7 +37,6 @@ module.exports = {
         }
     },
     deleteTransaction: async (req, res)=>{
-        console.log(req.body.transactionIdFromJSFile)
         try{
             await Transaction.findOneAndDelete({_id:req.body.transactionIdFromJSFile})
             console.log('Deleted Transaction')
