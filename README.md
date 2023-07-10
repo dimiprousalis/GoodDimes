@@ -1,7 +1,7 @@
 # GoodDimes
 GoodDimes is a web application that helps you split expenses with your friends. With GoodDimes, you can easily keep track of who owes who and how much, making it easy to settle up your debts.
 
-**Live Website: https://good-dimes.onrender.com/**
+**Live Website: https://gooddimes.cyclic.app/**
 
 ## Built With
 - Javascript
@@ -9,7 +9,7 @@ GoodDimes is a web application that helps you split expenses with your friends. 
 - MongoDB, Mongoose.js
 - Node.js, Express.js
 - VSCode
-- Hosted on Railway
+- Hosted on Cyclic
 
 ## Installation
 To install and run the GoodDimes web application, follow these steps:
