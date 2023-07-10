@@ -10,9 +10,9 @@ module.exports = {
                     {
                         $group: {
                             _id: null,
-                            totalAmount: { $sum: "$amount" },
-                            totalUserAmount: { $sum: "$userPortion" },
-                            totalFriendAmount: { $sum: "$friendPortion" },
+                            totalAmount: { $sum: { $ifNull: ["$amount", 0] } },
+                            totalUserAmount: { $sum: { $ifNull: ["$userPortion", 0] } },
+                            totalFriendAmount: { $sum: { $ifNull: ["$friendPortion", 0] } },
                             totalUserSpent: {
                                 $sum: {
                                     $cond: [{ $eq: ["$payer", "user"] }, "$amount", 0]
@@ -23,7 +23,7 @@ module.exports = {
                 ])
             ]);
 
-            const { totalAmount, totalUserAmount, totalFriendAmount, totalUserSpent } = sums[0];
+            const { totalAmount = 0, totalUserAmount = 0, totalFriendAmount = 0, totalUserSpent = 0 } = sums[0] || {};
 
             res.render('transactions.ejs', {
                 transactions,
