@@ -9,7 +9,7 @@ GoodDimes is a web application that helps you split expenses with your friends. 
 - MongoDB, Mongoose.js
 - Node.js, Express.js
 - VSCode
-- Hosted on Render
+- Hosted on Railway
 
 ## Installation
 To install and run the GoodDimes web application, follow these steps:
