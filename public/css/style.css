@@ -116,7 +116,7 @@ label {
     justify-content: center;
     align-items: center;
     height: 80%;
-    margin-top: 10%;
+    margin-top: 7%;
 
 }
 
@@ -127,7 +127,7 @@ label {
 .welcomeTxt {
     font-size: 400%;
     font-weight: bold;
-    padding: .5em;
+    padding: .5em 0 .5em .5em;
 
 }
 
@@ -186,6 +186,7 @@ label {
         font-size: 1.2rem;
         font-weight: 600;
         padding: 0 10px 0 10px;
+        margin-top: 0;
     }
 
     #home p {
