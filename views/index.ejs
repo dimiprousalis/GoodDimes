@@ -1,19 +1,58 @@
 <%- include('partials/header') -%>
 
 
-<div class="container-fluid">
-<h1 class="welcomeTxt">Welcome to Good Dimes</h1>
-    <main id="home">
-        <div>
-            <img src="/css/images/piggybank.png">
-        </div>
-        <div>
-            <p>Tired of forgetting who owes you and who you owe?<br>Well let's start keeping track!</p>
-            <a href="/login" class="btn">Login</a>
-            <a href="/signup" class="btn">Sign Up</a>
-        </div>
-    </main>
+    <div class="container-fluid">
+        <h1 class="welcomeTxt">Welcome to Good Dimes</h1>
+        <main id="home">
+            <div>
+                <img src="/css/images/piggybank.png">
+            </div>
+            <div>
+                <p>Tired of forgetting who owes you and who you owe?<br>Well let's start keeping track!</p>
+                <div class="buttons">
+                    <a href="/login" class="btn">Login</a>
+                    <a href="/signup" class="btn">Sign Up</a>
+                    <button id="demoLogin">Demo</button>
+                </div>
+            </div>
+        </main>
 
-</div>
+
+    </div>
 
     <%- include('partials/footer') -%>
+        <script>
+
+            //Demo button logic
+            const demoLoginButton = document.getElementById('demoLogin');
+            demoLoginButton.addEventListener('click', () => {
+                const demoEmail = 'demo@demo.com'
+                const demoPassword = 'demo1234'
+
+                //create an object with the data
+                const data = {
+                    email: demoEmail,
+                    password: demoPassword
+                };
+
+                //send a POST request to /login
+                fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                    .then(response => {
+                        if (response.status === 200) {
+                            window.location.href = '/transactions';
+                        } else {
+                            alert('Demo failed');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            });
+
+        </script>
