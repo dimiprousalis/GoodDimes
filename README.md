@@ -1,7 +1,7 @@
 # GoodDimes
 GoodDimes is a web application that helps you split expenses with your friends. With GoodDimes, you can easily keep track of who owes who and how much, making it easy to settle up your debts.
 
-**Live Website: https://gooddimes.cyclic.cloud**
+**Live Website: https://gooddimes.cyclic.cloud/**
 
 ## Built With
 - Javascript
